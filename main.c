@@ -43,16 +43,9 @@ int main(){
     }
 /////////////////////////////////////////////////////////////////////////////////////// 
     if(verificacionCorrecta == 1){
-        printf("Selecciona una opción:\n");
-        printf("1. Consultar saldo\n");
-        printf("2. Retirar\n");
-        printf("3. Depositar\n");
-        printf("4. Salir\n");
-
+    printf("\n-----  Menu Operaciones  -----\n");
     while (opcionMenu != 4){
-        printf("\n-----  Menu Operaciones  -----\n");
         printf("Selecciona una operación para realizar:\n");
-        printf("Selecciona una opción:\n");
         printf("1. Consultar saldo\n");
         printf("2. Retirar\n");
         printf("3. Depositar\n");
@@ -61,13 +54,11 @@ int main(){
 
         switch (opcionMenu){
             case 1: //Consulta
-                printf("--  Seleccionaste consultar  --\n");
-                printf("El saldo de tu cuenta es: %.2f", saldoUsuario);
-                sleep(3);
+                printf("--  CONSULTAR  --\n");
+                printf("----- El saldo de su cuenta es: %.2f -----\n\n\n", saldoUsuario);
                 break;
-                sleep(3);
             case 2: //Retirar
-                printf("--  Seleccionaste retirar  --\n");
+                printf("--  RETIRAR  --\n");
                 printf("¿Qué cantidad quieres retirar?\n");
                 printf("Solo se dan múltiplos de 100\n");
                 scanf(" %f", &saldoRetirar);
@@ -79,23 +70,22 @@ int main(){
                 printf("...\n");
                 sleep(1);
                 printf("Por favor, tome su dinero\n");
-                printf("El saldo de su cuenta es: %.2f", saldoUsuario);
+                printf("----- Su saldo ahora es: %.2f -----\n\n\n", saldoUsuario);
 
                 sleep(3);
                 break;
             case 3: //Depositar
-                printf("--  Seleccionaste depositar  --\n");
+                printf("--  DEPOSITAR  --\n");
                 printf("¿Qué cantidad quieres depositar?\n");
                 scanf(" %f", &saldoDepositar);
-                printf("Espere, se está ingresando su dinero\n");
+                printf("se está ingresando su dinero\n");
                 saldoUsuario = saldoUsuario + saldoDepositar;
                 sleep(1);
-                printf("Su saldo ahora es de: %.2f", saldoUsuario);
-
-                sleep(3);
+                printf("----- Su saldo ahora es: %.2f -----\n\n\n", saldoUsuario);
+                sleep(2);
                 break;
             case 4: //Salir
-                printf("--  Seleccionaste salir  --\n");
+                printf("--  Seleccionaste salir  --\n\n\n");
                 break;
             default:
                 printf("Opción no válida.\n");

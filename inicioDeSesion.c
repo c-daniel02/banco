@@ -8,7 +8,6 @@ int main(){
     char usuarioIngresado[20];
     char contraseñaIngresada[20];
 
-    
     int intentos = 0, intentosRestantes = 0;
 
     int verificacionCorrecta = 0;
@@ -64,21 +63,36 @@ int main(){
             case 1: //Consulta
                 printf("--  Seleccionaste consultar  --\n");
                 printf("El saldo de tu cuenta es: %.2f", saldoUsuario);
+                sleep(3);
                 break;
+                sleep(3);
             case 2: //Retirar
                 printf("--  Seleccionaste retirar  --\n");
-                
+                printf("¿Qué cantidad quieres retirar?\n");
+                printf("Solo se dan múltiplos de 100\n");
+                scanf(" %f", &saldoRetirar);
+                saldoUsuario = saldoUsuario - saldoRetirar;
+                printf("Espere, su dinero se está procesando\n");
+                sleep(1);
+                printf("...\n");
+                sleep(1);
+                printf("...\n");
+                sleep(1);
+                printf("Por favor, tome su dinero\n");
+                printf("El saldo de su cuenta es: %.2f", saldoUsuario);
 
-
+                sleep(3);
                 break;
             case 3: //Depositar
                 printf("--  Seleccionaste depositar  --\n");
                 printf("¿Qué cantidad quieres depositar?\n");
                 scanf(" %f", &saldoDepositar);
+                printf("Espere, se está ingresando su dinero\n");
                 saldoUsuario = saldoUsuario + saldoDepositar;
-                printf("Su saldo ahora es de ");
+                sleep(1);
+                printf("Su saldo ahora es de: %.2f", saldoUsuario);
 
-                sleep(2);
+                sleep(3);
                 break;
             case 4: //Salir
                 printf("--  Seleccionaste salir  --\n");

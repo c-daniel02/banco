@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 
 int main(){
     char usuarioPredeterminado[15] = "daniel";
@@ -14,6 +15,8 @@ int main(){
     int opcionMenu = 0;
 
     float saldoUsuario = 500;
+    float saldoDepositar = 0;
+    float saldoRetirar = 0;
 ////////////////////////////////////////////////////////////////////////////////////    
     printf("\n----------Inicio de sesión del banco---------\n");
 
@@ -58,23 +61,30 @@ int main(){
         scanf(" %d", &opcionMenu);
 
         switch (opcionMenu){
-        case 1: //Consulta
-            printf("--  Seleccionaste consultar  --\n");
-            printf("El saldo de tu cuenta es: %.2f", saldoUsuario);
-            break;
-        case 2: //Retirar
-            printf("--  Seleccionaste retirar  --\n");
-            
-            break;
-        case 3: //Depositar
-            printf("--  Seleccionaste depositar  --\n");
-            
-            break;
-        case 4: //Salir
-            printf("--  Seleccionaste salir  --\n");
-            break;
-        default:
-            printf("Opción no válida.\n");
+            case 1: //Consulta
+                printf("--  Seleccionaste consultar  --\n");
+                printf("El saldo de tu cuenta es: %.2f", saldoUsuario);
+                break;
+            case 2: //Retirar
+                printf("--  Seleccionaste retirar  --\n");
+                
+
+
+                break;
+            case 3: //Depositar
+                printf("--  Seleccionaste depositar  --\n");
+                printf("¿Qué cantidad quieres depositar?\n");
+                scanf(" %f", &saldoDepositar);
+                saldoUsuario = saldoUsuario + saldoDepositar;
+                printf("Su saldo ahora es de ");
+
+                sleep(2);
+                break;
+            case 4: //Salir
+                printf("--  Seleccionaste salir  --\n");
+                break;
+            default:
+                printf("Opción no válida.\n");
         }
     }
 
